@@ -1,6 +1,6 @@
 import Form from "../components/Form";
 
 const Register = () => {
-  return <Form route="/api/user/register" method="register" />;
+  return <Form route="/api/users/register/" method="register" />;
 };
 export default Register;

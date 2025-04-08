@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import api from "../api";
 import "../styles/Form.css";
 
@@ -21,8 +22,8 @@ const Form = ({ route, method }) => {
 
       if (method === "login") {
         const { access, refresh } = response.data;
-        localStorage.setItem("ACCESS_TOKEN", access);
-        localStorage.setItem("REFRESH_TOKEN", refresh);
+        localStorage.setItem(ACCESS_TOKEN, access);
+        localStorage.setItem(REFRESH_TOKEN, refresh);
         navigate("/");
       } else {
         alert("User registered successfully. Please login.");
